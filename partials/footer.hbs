@@ -1,0 +1,24 @@
+<section class="footer containr-fluid bg-secondary">
+    <div class="container px-8 py-2 block md:flex items-center md:justify-between text-center">
+        <div class="footer_left">
+            <div class="social flex gap-2 my-4 items-center justify-center">
+                <a class="bg-white w-8 h-8 rounded-lg flex items-center md:ml-auto" href="{{twitter_url @site.twitter}}">
+                    <img class="m-auto" src="{{asset 'images/icon-twitter.png'}}" alt="">
+                </a>
+                <a class="bg-white w-8 h-8 rounded-lg flex items-center" href="{{facebook_url @site.facebook}}">
+                    <img class="m-auto" src="{{asset 'images/icon-fb.png'}}" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="footer_right">
+            <div class="footer_nav my-4">
+                <ul class="flex items-center justify-center gap-4 md:gap-6 text-sm text-white">
+                    {{navigation type="secondary"}}
+                </ul>
+            </div>
+        </div>
+        <div class="footer_right">
+            <p class="footer_copy text-sm text-white">{{@custom.copyright_text}}</p>
+        </div>
+    </div>
+</section>

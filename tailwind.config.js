@@ -4,20 +4,19 @@ module.exports = {
     '**/*.{html,hbs}',
   ], 
   theme: {
-    screens: {
-      'xs': {'max': "575px"},
-      'sm': {'min': '576px', 'max': "767px"},
-      'md': {'min': '768px', 'max': "991px"},
-      'lg': {'min': '992px', 'max': "1199px"},
-      'xl': {'min': '1200px', 'max': "1399px"},
-      '2xl': {'min': '1400px'},
-    },
     colors: {
       'white': '#ffffff',
       'black': '#000000',
-      'primary': 'rgb(23, 157, 125)',
-      'secondary': '#696b6b',
+      'primary': '#E58948',
+      'secondary': '#253268',
+      'backdrop': 'rgba(0, 0, 0, 0.5)',
+      'gray': '#4E5965',
+      'lightGray': '#E0E4E8',
       'inherit': 'inherit',
+    },
+    fontFamily: {
+      'source': ['"Source Serif Pro", serif'],
+      'inter': ['"Inter", sans-serif'],
     },
     container: {
       center: true,
@@ -30,6 +29,7 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         '.container': {
+          minWidth: '320px',
           maxWidth: '100%',
           '@screen 2xl': {
             maxWidth: '1400px',

@@ -1,0 +1,38 @@
+{{!-- Articles Section --}}
+<section class="articles container px-8">
+    <div class="my-8">
+        {{#get "tags" limit="6" order='accent_color asc'}}
+        {{#foreach tags}}
+        <div class="article_block my-16">
+            <div class="flex items-center justify-between">
+                <h2 class="tag-title font-source text-3xl text-secondary mb-4 text-start font-semibold">{{name}}</h2>
+                <div class="line border-t border-solid border-lightGray mb-4 hidden xl:block xl:w-8/12 ml-auto mr-4"></div>
+                <div class="see-more text-end mb-4"><a class="text-secondary" href="{{url}}">{{t "See more"}} &raquo;</a></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {{#get "posts" include="tags,authors" filter="tag:{{slug}}" limit="4"}}
+                {{#foreach posts}}
+                <div class="article">
+                    <a href="{{url}}">
+                        <img class="rounded-lg mb-4 w-full h-52 object-cover" src="{{feature_image}}" alt="">
+                        <h3 class="article-title font-source text-xl">{{title}}</h3>
+                    </a>
+                    <div class="meta_info flex justify-between text-gray text-sm mt-2">
+                        <span class="author_name text-start">
+                            {{#primary_author}}
+                            <a href="{{url}}">{{name}}</a>
+                            {{/primary_author}}
+                        </span>
+                        <span class="published_date text-end">
+                            {{date format="MMM DD, YYYY"}}
+                        </span>
+                    </div>
+                </div>
+                {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+        {{/foreach}}
+        {{/get}}
+    </div>
+</section>

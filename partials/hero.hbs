@@ -1,0 +1,16 @@
+{{!-- Hero Section --}}
+<section class="hero container-fluid bg-lightGray border-b border-white">
+    <div class="h-auto w-full py-6 lg:py-12" style="background:url('{{@site.cover_image}}') repeat;">
+        <div class="hero_content h-auto">
+            <div class="title my-6 md:my-8 lg:my-12 bg-backdrop rounded-lg mx-4 lg:mx-auto lg:w-4/5 px-6 border border-gray max-w-[950px]">
+                <h1 class="text-center text-4xl lg:text-5xl font-semibold text-white leading-relaxed font-source py-4">{{@site.description}}</h1>
+            </div>
+            <div class="m-auto text-center pb-6 lg:pb-16 mb-6 lg:mb-16">
+                <form data-memmbers-form class="block md:flex items-center justify-center mx-4 md:mx-0">
+                    <input data-members-email type="email" class="email bg-white w-full md:w-96 p-3 mb-4 md:mb-0 rounded-md md:rounded-tr-none md:rounded-br-none focus:outline-none border-lightGray" placeholder="Your email address">
+                    <button type="submit" class="bg-primary px-3 py-3 text-white rounded-md md:rounded-tl-none md:rounded-bl-none md:-ml-2 w-full md:w-auto">{{t "Subscribe"}}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

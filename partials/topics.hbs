@@ -1,0 +1,30 @@
+{{!-- Topics Section --}}
+<section class="topics container-fluid">
+    <div class="container px-8">
+        <div class="my-16">
+            <h2 class="topics_title font-source text-3xl text-secondary my-4 md:w-96 text-start font-semibold">{{t "Course Topics"}}</h2>
+            <div class="blocks gap-0 md:gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                {{#get "tags" order='accent_color asc'}}
+                {{#foreach tags}}
+                <a href="#" class="article py-6 flex items-center border-t border-t-lightGray">
+                    <img class="rounded-lg border border-lightGray p-2 w-12" src="{{feature_image}}" alt="">
+                    <div class="meta_info flex justify-between text-gray text-sm m-auto">
+                        <span class="text-center">
+                            <h3 class="article-title font-source text-xl">{{name}}</h3>
+                            <p> 
+                                {{#get "posts" include="count.posts" filter="tag:{{slug}}"}}
+                                {{#foreach posts limit="1"}}
+                                {{../pagination.total}}
+                                {{/foreach}}
+                                {{/get}}
+                                {{t "Articles"}}
+                            </p>
+                        </span>
+                    </div>
+                </a>
+                {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </div>
+</section>
