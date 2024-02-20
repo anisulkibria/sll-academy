@@ -6,7 +6,7 @@
             <div class="blocks gap-0 md:gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 {{#get "tags" order='accent_color asc'}}
                 {{#foreach tags}}
-                <a href="#" class="article py-6 flex items-center border-t border-t-lightGray">
+                <a href="{{url}}" class="article py-6 flex items-center border-t border-t-lightGray">
                     <img class="rounded-lg border border-lightGray p-2 w-12" src="{{feature_image}}" alt="">
                     <div class="meta_info flex justify-between text-gray text-sm m-auto">
                         <span class="text-center">

@@ -4,3 +4,81 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main {
+  @apply min-h-full lg:min-h-[790px];
+}
+.content h2 {
+  @apply text-3xl lg:text-4xl font-source font-medium mb-4;
+}
+.content h3 {
+  @apply text-2xl lg:text-3xl font-source font-medium mb-4;
+}
+.content>*, 
+.content>*+* {
+  @apply mb-6;
+}
+.content a {
+  @apply text-primary underline;
+}
+.content .kg-image-card {
+  @apply lg:w-[75%] mx-auto;
+}
+.content .kg-image-card.kg-width-wide {
+  @apply lg:w-[90%];
+}
+.content .kg-image-card.kg-width-full {
+  @apply lg:w-full;
+}
+.content .kg-image-card.kg-width-full .kg-image {
+  @apply w-full;
+}
+
+.gh-toc ol {
+  @apply list-decimal;
+}
+.gh-toc ol li {
+  @apply my-2;
+}
+a.toc-link {
+  @apply font-normal;
+}
+.toc-link::before {
+  @apply h-0 lg:h-4 mt-1;
+}
+.is-active-link::before {
+  @apply bg-primary;
+}
+
+.kg-bookmark-card a.kg-bookmark-container {
+  @apply bg-lightGray border-0 rounded-none;
+}
+.kg-bookmark-card a.kg-bookmark-container:hover {
+  @apply border-0;
+}
+.content  .kg-bookmark-title {
+  @apply text-xl;
+}
+.content .kg-bookmark-description, 
+.content .kg-bookmark-author, 
+.content .kg-bookmark-publisher{
+  @apply text-xs;
+}
+
+figcaption {
+  @apply text-left font-source text-xs bg-lightGray p-2;
+}
+blockquote {
+  @apply bg-lightGray p-4 pl-8 border-l-4 border-gray font-source italic;
+}
+
+@media (max-width:768px) {
+    .nav-wrap {
+      position: absolute;
+      top: 60px;
+      background: #fff;
+      width: 100%;
+      left: 0;
+      padding: 2rem;
+  }
+}

@@ -1,1 +1,32 @@
 {{!< default}}
+<section class="container px-8">
+    <div class="my-8">
+        <div class="article_block my-16">
+            {{#author}}
+            <div class="my-16">
+                <h1 class="tag-title font-source text-3xl lg:text-5xl text-secondary mb-4 text-center font-semibold">{{name}}</h1>
+            </div>
+            {{/author}}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {{#foreach posts}}
+                <div class="article">
+                    <a href="{{url}}">
+                        <img class="rounded-lg mb-4 w-full h-52 object-cover border border-lightGray" src="{{feature_image}}" alt="">
+                        <h3 class="article-title font-source text-xl">{{title}}</h3>
+                    </a>
+                    <div class="meta_info flex justify-between text-gray text-sm mt-2">
+                        <span class="author_name text-start">
+                            {{#primary_tag}}
+                            <a href="{{url}}">{{name}}</a>
+                            {{/primary_tag}}
+                        </span>
+                        <span class="published_date text-end">
+                            {{date format="MMM DD, YYYY"}}
+                        </span>
+                    </div>
+                </div>
+                {{/foreach}}
+            </div>
+        </div>
+    </div>
+</section>

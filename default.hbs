@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    {{!-- Toc CSS --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+
     {{!-- Main CSS --}}
     <link rel="stylesheet" href="{{asset "built/main.min.css"}}">
 
@@ -20,9 +23,29 @@
 
     {{> header}}
 
-    {{{body}}}
+    <div class="main">
+        {{{body}}}
+    </div>
 
     {{> footer}}
+
+    {{!-- Toc JS --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+    <script>
+        tocbot.init({
+            tocSelector: '.gh-toc',
+            contentSelector: '.content',
+            headingSelector: 'h2',
+            hasInnerContainers: true,
+        });
+    </script>
+    <script>
+        let hamburger = document.getElementById("hamburger");
+        let nav_wrap = document.querySelector(".nav-wrap");
+        hamburger.addEventListener("click", function(){
+            nav_wrap.classList.toggle("hidden");
+        })
+    </script>
 
     {{ghost_foot}}
 </body>
